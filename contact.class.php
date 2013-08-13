@@ -20,8 +20,8 @@ class Contact {
 	);
 	
 	private $faxes = array(
-		'business' = null,
-		'other' = null
+		'business' => null,
+		'other' => null
 	);
 	
 	private $email;
