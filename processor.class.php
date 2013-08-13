@@ -57,6 +57,12 @@ class Processor{
 			$linetype = $this->determine_linetype($line);
 			//echo $linetype.'<br /><br />';
 			
+			// Cannot parse linetypes other than name if no contact has been created yet in the process
+			if($linetype != 'name' && $prevcontact == null){
+				continue;
+			}
+			
+			// Massive switch statement for parsing linetypes
 			switch($linetype){
 				case 'name':
 				break;
@@ -76,7 +82,6 @@ class Processor{
 				break;
 				case 'anom_other':
 				break;
-				
 			}
 		}
 	}
