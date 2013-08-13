@@ -2,6 +2,8 @@
 
 class Contact {
 	
+	private $index;
+	
 	private $firstname;
 	
 	private $lastname;
@@ -43,6 +45,10 @@ class Contact {
 	);
 	
 	// GETTERS AND SETTERS
+	
+	public function set_index($index){
+		$this->index = $index;
+	}
 	
 	public function set_firstname($first){
 		$this->firstname = $first;
@@ -97,6 +103,10 @@ class Contact {
 			return;
 		}
 		$this->anomalies = $anomalies;
+	}
+	
+	public function get_index(){
+		return $this->index;
 	}
 	
 	public function get_firstname(){

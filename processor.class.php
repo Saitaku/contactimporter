@@ -53,7 +53,7 @@ class Processor{
 		
 		// Get lines and strip out blank ones
 		$lines = file($file, FILE_IGNORE_NEW_LINES);
-		foreach($lines as $line){
+		foreach($lines as $key => $line){
 			if($line == null){
 				continue;
 			}
@@ -70,6 +70,7 @@ class Processor{
 			// Massive switch statement for parsing linetypes
 			switch($linetype){
 				case 'name':
+				
 				break;
 				case 'address1':
 				break;
