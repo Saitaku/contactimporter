@@ -48,7 +48,7 @@ class Processor{
 		require_once('contact.class.php');
 		require_once('lineparser.class.php');
 		
-		$parser = new 
+		$parser = LineParser::initialize();
 		$sheet = new Sheet();
 		// To check against to make sure a contact as been created prior to trying to add contact info
 		$contacts = $sheet->get_contacts();
