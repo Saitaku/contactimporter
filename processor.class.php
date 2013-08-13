@@ -44,7 +44,12 @@ class Processor{
 	
 	// Parse individual files
 	public function parse_file($file){
-		$prevcontact = null;
+		require_once('sheet.class.php');
+		require_once('contact.class.php');
+		
+		$sheet = new Sheet();
+		// To check against to make sure a contact as been created prior to trying to add contact info
+		$contacts = $sheet->get_contacts();
 		
 		// Get lines and strip out blank ones
 		$lines = file($file, FILE_IGNORE_NEW_LINES);
@@ -58,7 +63,7 @@ class Processor{
 			//echo $linetype.'<br /><br />';
 			
 			// Cannot parse linetypes other than name if no contact has been created yet in the process
-			if($linetype != 'name' && $prevcontact == null){
+			if($linetype != 'name' && $contacts == null){
 				continue;
 			}
 			
