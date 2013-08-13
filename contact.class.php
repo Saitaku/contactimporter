@@ -8,6 +8,8 @@ class Contact {
 	
 	private $lastname;
 	
+	private $title;
+	
 	private $address;
 	
 	private $city;
@@ -56,6 +58,10 @@ class Contact {
 	
 	public function set_lastname($last){
 		$this->lastname = $last;
+	}
+	
+	public function set_title($title){
+		$this->title = $title;
 	}
 	
 	public function set_address($address){
@@ -115,6 +121,10 @@ class Contact {
 	
 	public function get_lastname(){
 		return $this->lastname;
+	}
+	
+	public function get_title(){
+		return $this->title;
 	}
 	
 	public function get_address(){
