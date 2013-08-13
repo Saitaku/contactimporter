@@ -14,6 +14,7 @@ class LineParser{
 
 	}
 	
+	// Returns an array of name pieces
 	public function process_name($line){
 		
 	}
@@ -22,6 +23,7 @@ class LineParser{
 		
 	}
 	
+	// Returns an array of address pieces
 	public function process_address2($line){
 		
 	}
