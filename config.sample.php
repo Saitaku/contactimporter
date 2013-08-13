@@ -1,4 +1,4 @@
-<?
+<?php
 // Config Info
 $dbinfo = array(
 		'dbhost' => 'host',
