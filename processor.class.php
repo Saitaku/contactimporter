@@ -44,6 +44,8 @@ class Processor{
 	
 	// Parse individual files
 	public function parse_file($file){
+		$prevcontact = null;
+		
 		// Get lines and strip out blank ones
 		$lines = file($file, FILE_IGNORE_NEW_LINES);
 		foreach($lines as $line){
@@ -54,6 +56,28 @@ class Processor{
 			// Find the linetype we are working with
 			$linetype = $this->determine_linetype($line);
 			//echo $linetype.'<br /><br />';
+			
+			switch($linetype){
+				case 'name':
+				break;
+				case 'address1':
+				break;
+				case 'address2';
+				break;
+				case 'home':
+				break;
+				case 'bus':
+				break;
+				case 'mobile':
+				break;
+				case 'other':
+				break;
+				case 'bus fax':
+				break;
+				case 'anom_other':
+				break;
+				
+			}
 		}
 	}
 	
@@ -85,7 +109,7 @@ class Processor{
 			}
 		}
 		
-		return 'other';
+		return 'anom_other';
 		
 	}
 }
