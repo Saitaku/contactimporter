@@ -46,7 +46,9 @@ class Processor{
 	public function parse_file($file){
 		require_once('sheet.class.php');
 		require_once('contact.class.php');
+		require_once('lineparser.class.php');
 		
+		$parser = new 
 		$sheet = new Sheet();
 		// To check against to make sure a contact as been created prior to trying to add contact info
 		$contacts = $sheet->get_contacts();
@@ -70,23 +72,31 @@ class Processor{
 			// Massive switch statement for parsing linetypes
 			switch($linetype){
 				case 'name':
-				
+					$parser->process_name($line);
 				break;
 				case 'address1':
+					$parser->process_address1($line);
 				break;
 				case 'address2';
+					$parser->process_address2($line);
 				break;
 				case 'home':
+					$parser->process_home($line);
 				break;
 				case 'bus':
+					$parser->process_bus($line);
 				break;
 				case 'mobile':
+					$parser->process_mobile($line);
 				break;
 				case 'other':
+					$parser->process_other($line);
 				break;
 				case 'bus fax':
+					$parser->process_bus_fax($line);
 				break;
 				case 'anom_other':
+					$parser->process_anom_other($line);
 				break;
 			}
 		}
